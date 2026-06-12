@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* ===== RESET E VARIÁVEIS ===== */
+        /* ===== RESET E VARIÁVEIS (mantido original) ===== */
         * {
             margin: 0;
             padding: 0;
@@ -16,13 +16,13 @@
         :root {
             --black: #000000;
             --dark-gray: #000000;
-            --medium-gray: #060708;
-            --light-gray: #0d79e5;
-            --blue: #0e48a5;
-            --blue-hover: #2563eb;
+            --medium-gray: #0a0d11;
+            --light-gray: #000000;
+            --blue: #3838f3;
+            --blue-hover: #05080d;
             --white: #ffffff;
-            --text-gray: #f4fbff;
-            --text-light: #ffffff;
+            --text-gray: #cccccc;
+            --text-light: #dddddd;
             --transition: all 0.3s ease;
         }
         html {
@@ -52,7 +52,7 @@
             color: var(--blue);
         }
         .section-subtitle {
-            color: #ffffff;
+            color: #9ca3af;
             font-size: 1.2rem;
             margin-bottom: 3rem;
         }
@@ -81,22 +81,26 @@
             background: var(--blue-hover);
         }
 
-        /* ===== HEADER SEM CONTAINER VAZIO ===== */
+        /* ===== HEADER ===== */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(48, 106, 213, 0.2);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
             z-index: 1000;
             padding: 1rem 0;
-            text-align: center;
+        }
+        header .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 5%;
         }
         .nav-menu {
             display: flex;
-            justify-content: center;
             gap: 2.5rem;
         }
         .nav-menu a {
@@ -123,14 +127,14 @@
             width: 100%;
         }
 
-        /* ===== HERO COM PARTÍCULAS (EFEITO DE CÉLULA) ===== */
+        /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--black) 0%, #35358b 100%);
+            background: linear-gradient(135deg, var(--black) 0%, #1a1a2e 100%);
         }
         #particles-js {
             position: absolute;
@@ -153,7 +157,7 @@
         }
         .hero h1 span {
             color: var(--blue);
-            text-shadow: 0 0 20px rgba(20, 48, 204, 0.5);
+            text-shadow: 0 0 20px rgba(59,130,246,0.5);
         }
         .hero p {
             font-size: 1.5rem;
@@ -165,7 +169,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ===== SOBRE COM FOTO ===== */
+        /* ===== SOBRE ===== */
         .sobre {
             background: var(--dark-gray);
         }
@@ -207,11 +211,33 @@
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
         }
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--blue);
+        }
+        .stat-label {
+            color: #9ca3af;
+            font-size: 1rem;
+        }
 
         /* ===== SOLUÇÕES ===== */
         .solucoes {
             background: var(--black);
             text-align: center;
+        }
+        .solucoes h2 {
+            text-align: center;
+            display: block;
         }
         .solucoes-grid {
             display: grid;
@@ -248,6 +274,10 @@
         .projetos {
             background: var(--dark-gray);
             text-align: center;
+        }
+        .projetos h2 {
+            text-align: center;
+            display: block;
         }
         .filtros {
             display: flex;
@@ -309,7 +339,7 @@
             margin-bottom: 0.5rem;
         }
         .card-content p {
-            color: #e4eaf5;
+            color: #b0b0b0;
             margin-bottom: 1rem;
         }
         .card-links a {
@@ -323,6 +353,10 @@
         .habilidades {
             background: var(--black);
             text-align: center;
+        }
+        .habilidades h2 {
+            text-align: center;
+            display: block;
         }
         .skills-wrapper {
             display: grid;
@@ -358,15 +392,14 @@
             transition: width 1s ease;
         }
 
-        .btn-criar-site {
-            text-align: center;
-            margin-top: 3rem;
-        }
-
         /* ===== DEPOIMENTOS ===== */
         .depoimentos {
             background: var(--dark-gray);
             text-align: center;
+        }
+        .depoimentos h2 {
+            text-align: center;
+            display: block;
         }
         .depoimentos-grid {
             display: grid;
@@ -398,11 +431,22 @@
             object-fit: cover;
             border: 2px solid var(--blue);
         }
+        .cliente-info h4 {
+            font-size: 1.1rem;
+        }
+        .cliente-info span {
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
 
         /* ===== CONTATO ===== */
         .contato {
             background: var(--black);
             text-align: center;
+        }
+        .contato h2 {
+            text-align: center;
+            display: block;
         }
         .contato-wrapper {
             display: grid;
@@ -453,14 +497,93 @@
             border-radius: 10px;
             color: var(--white);
             font-family: inherit;
+            transition: border 0.3s;
         }
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--blue);
         }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
 
-        /* ===== BOTÕES FLUTUANTES ===== */
+        /* CONTAINER DE PDFs (organizado com links reais) */
+        .pdf-docs-section {
+            background: var(--medium-gray);
+            border-top: 1px solid var(--light-gray);
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .pdf-card {
+            background: var(--dark-gray);
+            border-radius: 24px;
+            padding: 2rem;
+            transition: var(--transition);
+            border: 1px solid rgba(59,130,246,0.3);
+            text-align: center;
+            backdrop-filter: blur(2px);
+        }
+        .pdf-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--blue);
+            box-shadow: 0 20px 30px rgba(59,130,246,0.15);
+        }
+        .pdf-card i {
+            font-size: 3rem;
+            color: var(--blue);
+            margin-bottom: 1.2rem;
+        }
+        .pdf-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+        .pdf-card p {
+            color: #b0b0b0;
+            margin-bottom: 1.8rem;
+            font-size: 0.95rem;
+        }
+        .pdf-btn {
+            background: transparent;
+            border: 1.5px solid var(--blue);
+            color: var(--blue);
+            padding: 0.6rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        .pdf-btn i {
+            font-size: 1rem;
+            margin: 0;
+        }
+        .pdf-btn:hover {
+            background: var(--blue);
+            color: var(--white);
+            border-color: var(--blue);
+        }
+
+        /* ===== OUTROS ===== */
+        .btn-criar-site {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .btn-criar-site .btn {
+            font-size: 1.2rem;
+            padding: 1rem 3rem;
+        }
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -484,31 +607,8 @@
         .whatsapp-float:hover {
             background: var(--blue);
             transform: scale(1.1);
+            border-color: var(--blue);
         }
-        .football-float {
-            position: fixed;
-            bottom: 30px;
-            right: 110px;
-            background: rgba(59, 130, 246, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(59, 130, 246, 0.6);
-            color: var(--white);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            cursor: pointer;
-            transition: var(--transition);
-            z-index: 100;
-        }
-        .football-float:hover {
-            background: var(--blue);
-            transform: scale(1.1);
-        }
-
         footer {
             background: var(--dark-gray);
             text-align: center;
@@ -516,7 +616,6 @@
             border-top: 1px solid var(--light-gray);
             color: #888;
         }
-
         @media (max-width: 992px) {
             .sobre .container {
                 grid-template-columns: 1fr;
@@ -526,23 +625,50 @@
                 max-width: 500px;
                 margin: 0 auto;
             }
+            .stats {
+                justify-content: center;
+            }
             .contato-wrapper {
                 grid-template-columns: 1fr;
             }
         }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .nav-menu { gap: 1.5rem; }
-            .football-float { right: 90px; width: 50px; height: 50px; font-size: 1.6rem; }
-            .whatsapp-float { width: 50px; height: 50px; font-size: 1.6rem; }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .nav-menu {
+                gap: 1.5rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+                padding: 3rem 0;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .nav-menu {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
     </style>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
+    
+        </div>
+    </header>
+
+   
         <div id="particles-js"></div>
         <div class="hero-content">
-            <!-- Conteúdo hero opcional -->
+           
         </div>
     </section>
 
@@ -554,20 +680,32 @@
             <div class="sobre-texto">
                 <h2>Sobre <span>mim</span></h2>
                 <p>Sou apaixonado por transformar ideias em experiências digitais rápidas, acessíveis e visualmente atraentes. Com experiência em desenvolvimento front-end, ajudo empresas e empreendedores a terem uma presença online que realmente converte.</p>
-                <p>Meu objetivo é entregar código limpo, design responsivo e performance excepcional – porque um site lento ou confuso afasta clientes.</p>
+                <p>Meu objetivo é entregar código limpo, design responsivo e performance excepcional – porque um site lento ou confuso afasta clientes. Trabalho lado a lado com você para entender suas necessidades e criar soluções sob medida.</p>
+                <div class="stats"></div>
             </div>
         </div>
     </section>
 
     <section id="solucoes" class="solucoes">
         <div class="container">
-            <h2>Criar <span>Site</span></h2>
-            <p class="section-subtitle">Soluções práticas para os desafios mais comuns</p>
+            <h2>CRIAR SITE<span></span></h2>
+            <p class="section-subtitle">Soluções práticas para os desafios mais comuns de quem precisa de um site</p>
             <div class="solucoes-grid">
-                <div class="solucao-card"><i class="fas fa-tachometer-alt"></i><h3>Site moderno</h3><p>Carregamento rápido e design atual.</p></div>
-                <div class="solucao-card"><i class="fas fa-mobile-alt"></i><h3>Responsivo</h3><p>Adapta-se a qualquer dispositivo.</p></div>
-                <div class="solucao-card"><i class="fas fa-search"></i><h3>SEO</h3><p>Para aparecer no Google.</p></div>
-                <div class="solucao-card"><i class="fas fa-paint-brush"></i><h3>Layout</h3><p>Interfaces profissionais.</p></div>
+                <div class="solucao-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Site moderno e responsivo!</h3>
+                    <p>Otimização de imagens, código e servidor para carregamento em menos de 2 segundos.</p>
+                </div>
+                <div class="solucao-card">
+                    <i class="fas fa-search"></i>
+                    <h3>perfil?</h3>
+                    <p>Práticas de SEO para você aparecer nas primeiras posições do Google.</p>
+                </div>
+                <div class="solucao-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>design Layout</h3>
+                    <p>Interfaces modernas que transmitem profissionalismo e confiança.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -575,68 +713,145 @@
     <section id="projetos" class="projetos">
         <div class="container">
             <h2>Projetos <span>recentes</span></h2>
+            <p class="section-subtitle">Alguns trabalhos que entregam resultados reais.</p>
             <div class="filtros">
-                <button class="filtro-btn active" data-filter="all">Todos</button>
                 <button class="filtro-btn" data-filter="sites">Sites</button>
             </div>
             <div class="projetos-grid">
                 <div class="card" data-category="sites">
-                    <div class="card-img"><img src="imagem.png" alt="Lanchonete"></div>
+                    <div class="card-img">
+                        <img src="imagem.png" alt="Landing page">
+                    </div>
                     <div class="card-content">
                         <h3>Landing page - Lanchonete</h3>
-                        <p>Site institucional focado em conversão.</p>
-                        <div class="card-links"><a href="https://lacasaburguer101-sys.github.io/CARDAPIO-ONLINE-SITE/" target="_blank">Visitar site</a></div>
+                        <p>Site institucional com foco em conversão de vendas e design responsivo.</p>
+                        <div class="card-links">
+                            <a href="https://lacasaburguer101-sys.github.io/CARDAPIO-ONLINE-SITE/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Visitar site</a>
+                        </div>
                     </div>
                 </div>
                 <div class="card" data-category="apps">
-                    <div class="card-img"><img src="imagem.png" alt="Personal"></div>
+                    <div class="card-img">
+                        <img src="imagem.png" alt="Site personal">
+                    </div>
                     <div class="card-content">
                         <h3>Site - Personal Trainer</h3>
-                        <p>Com agendamento e área de membros.</p>
-                        <div class="card-links"><a href="https://rener-souza-personal.github.io/site-personal/" target="_blank">Visitar site</a></div>
+                        <p>Com agendamento e área de membros. 100% responsivo.</p>
+                        <div class="card-links">
+                            <a href="https://rener-souza-personal.github.io/site-personal/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Visitar site</a>
+                        </div>
                     </div>
                 </div>
                 <div class="card" data-category="sites">
-                    <div class="card-img"><img src="imagem.png" alt="Ornamentar"></div>
-                    <div class="card-content">
-                        <h3>Site - Ornamentar</h3>
-                        <p>Galeria com temas e itens.</p>
-                        <div class="card-links"><a href="https://rithiele-decor.github.io/rithyelle.ornamenta.site/" target="_blank">Visitar site</a></div>
+                    <div class="card-img">
+                        <img src="imagem.png" alt="Portfólio online">
                     </div>
-                     </div>
-                <div class="card" data-category="sites">
-                    <div class="card-img"><img src="imagem.png" alt="Ornamentar"></div>
                     <div class="card-content">
-                        <h3>Site - Odontologia </h3>
-                        <p>Perfil profissional</p>
-                        <div class="card-links"><a href="https://drgelmarnunes-site.github.io/agendar/" target="_blank">Visitar site</a></div>
+                        <h3>Site-ornamentar</h3>
+                        <p>Galeria com temas e itens e otimização para SEO.</p>
+                        <div class="card-links">
+                            <a href="https://rithiele-decor.github.io/rithyelle.ornamenta.site/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Visitar site</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" data-category="sites">
+                    <div class="card-img">
+                        <img src="imagem.png" alt="Consultório Odontológico">
+                    </div>
+                    <div class="card-content">
+                        <h3>EM BREVE - Site para Dentista</h3>
+                        <p>Site profissional com agendamento online, depoimentos de pacientes e localização interativa.</p>
+                        <div class="card-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Visitar site</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" data-category="sites">
+                    <div class="card-img">
+                        <img src="imagem.png" alt="Portfólio Criativo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Portfólio - Avaliação de Trabalhos</h3>
+                        <p>Plataforma para apresentar cases, receber feedbacks e mostrar resultados com design moderno.</p>
+                        <div class="card-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Visitar site</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" data-category="sites">
+                    <div class="card-img">
+                        <img src="imagem.png" alt="Academia">
+                    </div>
+                    <div class="card-content">
+                        <h3>EM BREVE - Academia</h3>
+                        <p>Site institucional com grade de horários, planos de treino, equipe de professores e formulário de contato.</p>
+                        <div class="card-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Visitar site</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="habilidades">
+    <!-- CONTAINER DE PDFs ORGANIZADO COM LINKS DIRETOS (cada botão aponta para seu PDF) -->
+    <section class="pdf-docs-section">
         <div class="container">
-            <h2>Minhas <span>habilidades</span></h2>
-            <div class="skills-wrapper">
-                <div class="skill-item"><div class="skill-info"><span><i class="fab fa-html5"></i> HTML5</span><span>90%</span></div><div class="progress-bar"><div class="progress" data-width="90"></div></div></div>
-                <div class="skill-item"><div class="skill-info"><span><i class="fab fa-css3-alt"></i> CSS3</span><span>85%</span></div><div class="progress-bar"><div class="progress" data-width="85"></div></div></div>
-                <div class="skill-item"><div class="skill-info"><span><i class="fab fa-js"></i> JavaScript</span><span>80%</span></div><div class="progress-bar"><div class="progress" data-width="80"></div></div></div>
-                <div class="skill-item"><div class="skill-info"><span><i class="fab fa-git-alt"></i> Git</span><span>75%</span></div><div class="progress-bar"><div class="progress" data-width="75"></div></div></div>
+            <div style="text-align: center;">
+                <h2>📄 <span>Documentos</span> e Orçamentos</h2>
+                <p class="section-subtitle">Acesse os orçamentos, documentos técnicos dos projetos em PDF</p>
             </div>
-            <div class="btn-criar-site">
-                <a href="https://welcomeacr-coder.github.io/Criar-meu-site/" class="btn">CRIAR MEU SITE</a>
+            <div class="pdf-grid">
+                <!-- Card 1: Orçamento Landing Page (PDF real) -->
+                <div class="pdf-card">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Orçamento - Landing Page</h3>
+                    <p>Proposta detalhada, valores e prazos para desenvolvimento do site institucional.</p>
+                    <a href="Landing_Page_Profissional.pdf" class="pdf-btn" target="_blank" download>
+                        <i class="fas fa-file-pdf"></i> Abrir / Baixar PDF
+                    </a>
+                </div>
+                <!-- Card 2: Documento do Projeto Técnico (PDF real) -->
+                <div class="pdf-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Documento do Projeto</h3>
+                    <p>Especificações técnicas, arquitetura, entregáveis e cronograma do projeto.</p>
+                    <a href="Documento_Projeto_Solucoes_Digitais.pdf" class="pdf-btn" target="_blank" download>
+                        <i class="fas fa-file-pdf"></i> Abrir / Baixar PDF
+                    </a>
+                </div>
+                <!-- Card 3: Orçamento + Escopo (PDF real) -->
+                <div class="pdf-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Orçamento + Escopo</h3>
+                    <p>Orçamento detalhado para projeto de e-commerce + documentação de funcionalidades.</p>
+                    <a href="Orcamento_Escopo_Projetos_Digitais.pdf" class="pdf-btn" target="_blank" download>
+                        <i class="fas fa-file-pdf"></i> Abrir / Baixar PDF
+                    </a>
+                </div>
+              
             </div>
+            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: #9ca3af;"> </p>
+           
         </div>
     </section>
-            </div>
+
+    <div class="btn-criar-site">
+        <a href="https://welcomeacr-coder.github.io/Criar-meu-site/" class="btn">CRIAR MEU SITE</a>
+    </div>
+    <div style="margin-top: 3rem; text-align: center;">
+        <div style="max-width: 260px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 15px 25px rgba(0,0,0,0.3);">
+            <img src="mylivro.png" alt="Capa do Livro" style="width: 100%; height: auto; display: block;">
         </div>
-    </section>
+        <a href="https://www.amazon.com.br/dp/B0H3G4GPK4?ref_=quick_view_ref_tag" class="btn" download style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.8rem;">
+            <i class="fas fa-download"></i> MEU EBOOK
+        </a>
+    </div>
 
     <a href="https://wa.me/5587996404397" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <div class="football-float" id="footballBtn"><i class="fas fa-futbol"></i></div>
- <footer><div class=""><p>A.CARLOS RAMALHO</p></div></footer>
+
+    <footer><div class="container"><p>A.CARLOS RAMALHO</p></div></footer>
+
     <script>
         particlesJS('particles-js', {
             particles: {
@@ -648,23 +863,56 @@
                 line_linked: { enable: true, distance: 150, color: '#3b82f6', opacity: 0.4, width: 1 },
                 move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out' }
             },
-            interactivity: { detect_on: 'canvas', events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } } }
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } }
+            }
         });
 
-        // Progress bars
-        const progressBars = document.querySelectorAll('.progress');
-        const skillsSection = document.querySelector('.habilidades');
+        // Contadores originais (nenhuma interferência)
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    progressBars.forEach(bar => { bar.style.width = bar.getAttribute('data-width') + '%'; });
+                    animateCounters();
                     observer.unobserve(entry.target);
                 }
             });
         });
-        if (skillsSection) observer.observe(skillsSection);
+        const sobreEl = document.querySelector('.sobre');
+        if(sobreEl) observer.observe(sobreEl);
 
-        // Filtro projetos
+        // Progress bars
+        const progressBars = document.querySelectorAll('.progress');
+        const skillsSection = document.querySelector('.habilidades');
+        const progressObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    progressBars.forEach(bar => {
+                        const width = bar.getAttribute('data-width');
+                        bar.style.width = width + '%';
+                    });
+                    progressObserver.unobserve(entry.target);
+                }
+            });
+        });
+        if(skillsSection) progressObserver.observe(skillsSection);
+
+        // Filtros projetos
         const filtros = document.querySelectorAll('.filtro-btn');
         const projetos = document.querySelectorAll('.card');
         filtros.forEach(btn => {
@@ -672,27 +920,23 @@
                 filtros.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 const filter = btn.getAttribute('data-filter');
-                projetos.forEach(proj => {
-                    proj.style.display = (filter === 'all' || proj.getAttribute('data-category') === filter) ? 'block' : 'none';
+                projetos.forEach(projeto => {
+                    if (filter === 'all' || projeto.getAttribute('data-category') === filter) {
+                        projeto.style.display = 'block';
+                    } else {
+                        projeto.style.display = 'none';
+                    }
                 });
             });
         });
 
-        // Scroll suave
+        // Suavização links ancora
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href && href !== '#') {
-                    e.preventDefault();
-                    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-                }
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
-        });
-
-        // Botão futebol: abre roleta em página inteira
-        const footballBtn = document.getElementById('footballBtn');
-        footballBtn.addEventListener('click', () => {
-            window.location.href = 'https://welcomeacr-coder.github.io/releta-premiada/';
         });
     </script>
 </body>
